@@ -2,17 +2,17 @@ package homework.grade1;
 
 public class ERyder {
     
-    // 成员变量
+
     private String bikeID;
     private int batteryLevel;
     private boolean isAvailable;
     private double kmDriven;
 
-    // 无参构造方法
+
     public ERyder() {
     }
 
-    // 全参构造方法
+
     public ERyder(String bikeID, int batteryLevel, boolean isAvailable, double kmDriven) {
         this.bikeID = bikeID;
         this.batteryLevel = batteryLevel;
@@ -20,7 +20,7 @@ public class ERyder {
         this.kmDriven = kmDriven;
     }
 
-    // ride() 方法
+
     public void ride() {
         if (batteryLevel > 0 && isAvailable) {
             System.out.println("自行车 " + bikeID + " 可使用");
@@ -29,7 +29,7 @@ public class ERyder {
         }
     }
 
-    // printBikeDetails() 方法
+
     public void printBikeDetails() {
         System.out.println("=== 自行车信息 ===");
         System.out.println("自行车编号：" + bikeID);
@@ -38,7 +38,7 @@ public class ERyder {
         System.out.println("行驶里程：" + kmDriven + " 千米");
     }
 
-    // Getters 和 Setters
+
 
     public String getBikeID() {
         return bikeID;
@@ -53,7 +53,7 @@ public class ERyder {
     }
 
     public void setBatteryLevel(int batteryLevel) {
-        // 校验电量值，仅允许设置 0 到 100 之间的数值
+
         if (batteryLevel >= 0 && batteryLevel <= 100) {
             this.batteryLevel = batteryLevel;
         } else {
