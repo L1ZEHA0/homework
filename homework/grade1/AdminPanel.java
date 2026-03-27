@@ -9,6 +9,7 @@ public class AdminPanel {
 
     private List<RegisteredUsers> registeredUsersList = new ArrayList<>();
     private Scanner scanner = new Scanner(System.in);
+    private BikeRental bikeRental = new BikeRental();
 
     public void userManagementOptions() {
         while (true) {
@@ -18,8 +19,9 @@ public class AdminPanel {
             System.out.println("2. 查看已注册用户");
             System.out.println("3. 删除已注册用户");
             System.out.println("4. 修改已注册用户信息");
-            System.out.println("5. 退出系统");
-            System.out.print("请输入选项（1-5）：");
+            System.out.println("5. 演示自行车租赁系统");
+            System.out.println("6. 退出系统");
+            System.out.print("请输入选项（1-6）：");
 
             int choice = scanner.nextInt();
             scanner.nextLine();
@@ -38,6 +40,9 @@ public class AdminPanel {
                     updateRegisteredUsers();
                     break;
                 case 5:
+                    bikeRental.simulateApplicationInput();
+                    break;
+                case 6:
                     System.out.println("感谢使用 ERyder 管理系统，再见！");
                     scanner.close();
                     return;
