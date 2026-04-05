@@ -79,11 +79,20 @@ public class UserService {
                 lastThreeTrips[j] = tripInfo.toString();
             }
             
-            RegisteredUsers newUser = new RegisteredUsers(
-                    fullName, emailAddress, dateOfBirth,
-                    cardNumber, cardExpiryDate, cardProvider,
-                    cvv, userType, lastThreeTrips
-            );
+            RegisteredUsers newUser;
+            if (userType.equalsIgnoreCase("VIP")) {
+                newUser = new VIPUser(
+                        fullName, emailAddress, dateOfBirth,
+                        cardNumber, cardExpiryDate, cardProvider,
+                        cvv, userType, lastThreeTrips
+                );
+            } else {
+                newUser = new RegularUser(
+                        fullName, emailAddress, dateOfBirth,
+                        cardNumber, cardExpiryDate, cardProvider,
+                        cvv, userType, lastThreeTrips
+                );
+            }
             
             registeredUsersList.add(newUser);
             System.out.println("\n用户 " + fullName + " 添加成功！");
